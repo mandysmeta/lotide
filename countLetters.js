@@ -8,16 +8,16 @@ const assertEqual = function(actual, expected) {
 //take in sentence(string)
 //return count of each letter of sentence
 const countLetters = function(sentence) {
-const histogram = {};
+const results = {};
 
 for (let i = 0; i < sentence.length; i++) {
   const letter = sentence[i];
-  if (!histogram[letter]) {
-    histogram[letter] = 0;
+  if (!results[letter]) {
+    results[letter] = 0;
   }
-  histogram[letter]++;
+  results[letter]++;
 }
-return histogram;
+return results;
 }
-console.log(countLetters("i love oaklan"));
+console.log(countLetters("hello world"));
   
