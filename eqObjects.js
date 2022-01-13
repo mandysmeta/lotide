@@ -9,7 +9,7 @@ const assertEqual = function(actual, expected) {
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
-  } 
+  }
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
@@ -18,25 +18,29 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const eqObjects = function(mainObj, diffObj) {
-  const objOneKeys = Object.keys(mainObj)
-  const objTwoKeys = Object.keys(diffObj)
+const eqObjects = function(object1, object2) {
+  // comparing lengths of object key arrays
+  const objOneKeys = Object.keys(object1);
+  const objTwoKeys = Object.keys(object2);
   if (objOneKeys.length !== objTwoKeys.length) {
     return false;
   }
-  for (let key in mainObj) {
-    if (!diffObj.hasOwnProperty(key)) {
+  // checks diff obj for all keys in main
+  for (let key in object1) {
+    if (!object2.hasOwnProperty(key)) {
       return false;
     }
-    if (Array.isArray(mainObj[key])) {
-      if (Array.isArray(diffObj[key])) {
-        if (!eqArrays(mainObj[key], diffObj[key])) {
-          console.log('hello world')
+    // checks if value is an array on each
+    if (Array.isArray(object1[key])) {
+      if (Array.isArray(object2[key])) {
+        if (!eqArrays(object1[key], object2[key])) {
+          console.log('hello world');
           return false;
         }
       }
     } else {
-      if (mainObj[key] !== diffObj[key]) {
+      //compares values if they are primitives
+      if (object1[key] !== object2[key]) {
         return false;
       }
     }
@@ -44,9 +48,11 @@ const eqObjects = function(mainObj, diffObj) {
   return true;
 };
 
+
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
+assertEqual(eqObjects(ab, ba), true); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
+// console.log(eqObjects(ab, abc)); // => false
+assertEqual(eqObjects(ab, abc), false);
