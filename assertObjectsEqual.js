@@ -1,3 +1,5 @@
+const inspect = require('util').inspect;
+
 const eqObjects = function(object1, object2) {
   // comparing lengths of object key arrays
   const objOneKeys = Object.keys(object1);
@@ -28,12 +30,12 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+
 const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  if (eqObjects(actual, expected)) {
+    console.log(`Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
-console.log(`Example label: ${inspect(actual)}`);
+console.log(assertObjectsEqual({ a: '1', b: 2 },{ b: 2, a: '1' }))
