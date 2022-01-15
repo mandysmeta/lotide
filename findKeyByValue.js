@@ -32,4 +32,4 @@ assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 
 //Object.keys function
 //for...of to loop over keys (for(let property of array))
-//wrtie more test cases
+//write more test cases
