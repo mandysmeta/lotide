@@ -30,6 +30,6 @@ const middle = function(array) {
   }
  return middleArray 
 }
-console.log(middle([1, 2])) //less than 3
-console.log(middle([1, 2, 3, 4])) //even
-console.log(middle([1, 2, 3, 4, 5])) //odd
+console.log(middle([1, 2])) //less than 3-empty
+console.log(middle([1, 2, 3, 4])) //even-2,3
+console.log(middle([1, 2, 3, 4, 5])) //odd-3
