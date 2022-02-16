@@ -6,10 +6,10 @@
 //     console.log(`Assertion Failed: ${actual} !== ${expected}`);
 //   }
 // };
-const assertEqual = require('./assertEqual');
+//const assertEqual = require('./assertEqual');
 
 //function goal: provide tail of array - every element excluding the first(head)
-const tail = function (arr) {
+const tail = function(arr) {
   let answer = arr.slice(1);
   //should return new array without changing original (use slice NOT splice)
   return answer;
