@@ -8,11 +8,15 @@
 // };
 const assertEqual = require('./assertEqual');
 
-const tail = function(list) {
-  let answer = list.splice(1);
-  return (answer);
+//function goal: provide tail of array - every element excluding the first(head)
+const tail = function (arr) {
+  let answer = arr.slice(1);
+  //should return new array without changing original (use slice NOT splice)
+  return answer;
 };
 // TEST CODE
+const wordsTail = tail(["Yo Yo", "Lighthouse", "Labs"]);
+assertEqual(wordsTail.length, 2);
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
-assertEqual(words.length, 3);
+assertEqual(words.length, 3); //original array should return 3
