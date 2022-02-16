@@ -6,22 +6,20 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-
-//check first array
+//goal: compare two arrays(arr1 & arr2)
 const eqArrays = function(arr1, arr2) {
+  //if not the same - false
   if (arr1.length !== arr2.length) {
     return false;
-  } 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
+  } else {
+    //if the same - true
+    if (arr1.length === arr2.length){
+      return true;
     }
   }
-  return true;
 }
-console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
-console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])) // => true
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])) // => false
+
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true) // => false
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true) // => true
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true) // => false
