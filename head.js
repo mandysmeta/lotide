@@ -1,4 +1,4 @@
-// Removed - FUNCTION IMPLEMENTATION
+// Remove FUNCTION IMPLEMENTATION
 // const assertEqual = function(actual, expected) {
 //   if (actual === expected) {
 //     console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -12,6 +12,8 @@ const assertEqual = require('./assertEqual');
 const head = function(input) {
   return (input[0]);
 }
-// TEST CODE
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+// Remove TEST CODE
+// assertEqual(head([5,6,7]), 5);
+// assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+
+module.exports = head;

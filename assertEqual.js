@@ -6,7 +6,7 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-// Removed - TEST CODE
+// Remove TEST CODE
 // assertEqual("Lighthouse Labs", "Bootcamp");
 // assertEqual(1, 1);
 
