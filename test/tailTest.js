@@ -13,10 +13,10 @@ describe("#tail", () => {
   });
 
   it("returns '3', for wordsTail.length", () => {
-     const words = ["Yo Yo", "Lighthouse", "Labs"];
-     tail(words);
-     assert.deepEqual(words.length, 3);
-   });
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.deepEqual(words.length, 3);
+  });
 });
 //const wordsTail = tail(["Yo Yo", "Lighthouse", "Labs"]);
 //assertEqual(wordsTail.length, 2);
