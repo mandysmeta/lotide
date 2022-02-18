@@ -1,34 +1,29 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const findKeyByValue = function(object, value) {
-  const keys = Object.keys(object)
+  const keys = Object.keys(object);
   for (const movies of keys) {
     if (object[movies] === value) {
-      return movies
+      return movies;
     }
   }
 
-}
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+};
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
 
-const provinces = { 
+const provinces = {
   west: "BC",
   prairies: "Sask",
   east:  "Ontario"
 };
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+//console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(provinces, "Sask"), "prairies");
 
 //Object.keys function
 //for...of to loop over keys (for(let property of array))
