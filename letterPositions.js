@@ -1,10 +1,4 @@
-const assertArraysEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+//const assertArraysEqual = require('./assertArraysEqual');
 
 const letterPositions = function(sentence) {
   const results = {};
@@ -17,7 +11,7 @@ const letterPositions = function(sentence) {
     } else {
       results[letter] = [i];
     }
-  }  
+  }
 
   return results;
 };
