@@ -1,3 +1,5 @@
+const eqArrays = require('./eqArrays');
+
 const eqObjects = function(object1, object2) {
   // comparing lengths of object key arrays
   const objOneKeys = Object.keys(object1);
@@ -9,14 +11,14 @@ const eqObjects = function(object1, object2) {
   for (let key in object1) {
     // checks if value is an array on each
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-        if (!eqArrays(object1[key], object2[key])) {
-          //console.log('hello world');
-          return false;
+      if (!eqArrays(object1[key], object2[key])) {
+        //console.log('hello world');
+        return false;
       }
     } else if (object1[key] !== object2[key]) {
 
       //compares values if they are primitives
-        return false;
+      return false;
     }
   }
   return true;
@@ -31,4 +33,4 @@ const assertObjectsEqual = function(actual, expected) {
     console.log(`Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
-assertObjectsEqual({ a: '1', b: 2 },{ b: 2, a: '1' })
+assertObjectsEqual({ a: '1', b: 2 },{ b: 2, a: '1' });
