@@ -1,29 +1,14 @@
-const assertArraysEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false
-  } 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false
-    }
-  }
-  return true
-};
+//const assertArraysEqual = require('./assertArraysEqual');
+//const eqArrays = require('./eqArrays');
 
 const map = function(array, callback) {
+  //map function takes in: 1. array to map & 2. callback func
   const results = [];
   for (let item of array) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
 const words = ["ground", "control", "to", "major", "tom"];
 
@@ -32,5 +17,3 @@ console.log(results1);
 
 const results2 = map(words, word => word[0]);
 console.log(results2);
-
-//map function takes in: 1. array to map & 2. callback func
