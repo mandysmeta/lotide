@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 //countOnly will be given an array and an object
 //(object should contain counts of everything in input)
@@ -14,14 +8,14 @@ const countOnly = function(allItems, itemsToCount) {
     //console.log(item);
     if (itemsToCount[item]) {
       if (result[item]) {
-        result[item]++
+        result[item]++;
       } else {
         result[item] = 1;
       }
     }
   }
   return result;
-} 
+};
 const firstNames = [
   "Karl",
   "Salima",
