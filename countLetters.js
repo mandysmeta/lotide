@@ -15,4 +15,6 @@ const countLetters = function(sentence) {
   return results;
 };
 console.log(countLetters("hello world"));
+
+module.exports = countLetters;
   
