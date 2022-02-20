@@ -17,6 +17,8 @@ const data = [1, 2, 3, 4, 5];
 const result = takeUntil(data, (x) => x === 4);
 console.log(result);
 
+module.exports = takeUntil;
+
 
 /*compass ex:
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];

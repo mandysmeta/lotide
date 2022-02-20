@@ -17,3 +17,5 @@ console.log(results1);
 
 const results2 = map(words, word => word[0]);
 console.log(results2);
+
+module.exports = map;

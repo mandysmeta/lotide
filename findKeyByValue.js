@@ -25,6 +25,8 @@ assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 assertEqual(findKeyByValue(provinces, "Sask"), "prairies");
 
+module.exports = findKeyByValue;
+
 //Object.keys function
 //for...of to loop over keys (for(let property of array))
 //write more test cases
