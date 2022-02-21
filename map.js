@@ -1,5 +1,5 @@
-//const assertArraysEqual = require('./assertArraysEqual');
-//const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
+const eqArrays = require('./eqArrays');
 
 const map = function(array, callback) {
   //map function takes in: 1. array to map & 2. callback func
@@ -13,9 +13,9 @@ const map = function(array, callback) {
 const words = ["ground", "control", "to", "major", "tom"];
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
+assertArraysEqual(results1);
 
 const results2 = map(words, word => word[0]);
-console.log(results2);
+assertArraysEqual(results2);
 
 module.exports = map;

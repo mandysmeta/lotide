@@ -1,5 +1,5 @@
-//const eqArrays = require('./eqArrays');
-//const assertArraysEqual = require('./assertArraysEqual');
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 //take in array with elements-nested arrays, return flattened version
 const flatten = function(elements) {
@@ -16,6 +16,6 @@ const flatten = function(elements) {
   return flatArray;
 };
 
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]], [ 1, 2, 3, 4, 5, 6 ]));
 
 module.exports = flatten;
